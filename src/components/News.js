@@ -31,7 +31,7 @@ export default class News extends Component {
   }
 
   async componentDidMount() {
-    document.title = `NewsNexus - ${this.capitalizeTitle(this.props.category)}`
+    document.title = `NewsNexus - Top ${this.capitalizeTitle(this.props.category)} Headlines`
     this.fetchArticles(1)
   }
 
@@ -59,7 +59,7 @@ export default class News extends Component {
     return (
       <div>
         <div className='w-[70%] max-w-[1000px] mx-auto py-10'>
-          <h2 className='text-ceter text-2xl font-bold text-center'>News Nexus Top Headlines</h2>
+          <h2 className='text-ceter text-2xl font-bold text-center'>News Nexus: Top {this.capitalizeTitle(this.props.category)} Headlines</h2>
           {this.state.loading && <Spinner/>}
           <div className='w-full flex gap-9 flex-wrap items-stretch py-10'>
             {this.state.article.map((element) => {
