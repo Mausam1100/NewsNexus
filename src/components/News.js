@@ -17,7 +17,7 @@ export default class News extends Component {
       category: PropTypes.string
     }
 
-  constructor(z) {
+  constructor() {
     super()
     this.state = {
       article : [],
@@ -26,7 +26,12 @@ export default class News extends Component {
     }
   }
   
+  capitalizeTitle = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
   async componentDidMount() {
+    document.title = `NewsNexus - ${this.capitalizeTitle(this.props.category)}`
     this.fetchArticles(1)
   }
 
@@ -59,7 +64,7 @@ export default class News extends Component {
           <div className='w-full flex gap-9 flex-wrap items-stretch py-10'>
             {this.state.article.map((element) => {
               return <div key={element.url} className='w-[calc(34.5%-36px)]'>
-                <NewsItems title={element.title} description={element.description} imgUrl={element.urlToImage? element.urlToImage: imageNotFound} newsUrl={element.url} author={element.author? element.author: "Unknown"} date={element.publishedAt} source={element.source.name}/>
+                <NewsItems title={element.title} description={element.description} imgUrl={element.urlToImage? element.urlToImage: imageNotFound} newsUrl={element.url} author={element.author? element.author: "Unknown"} date={element.publishedAt}/>
               </div>
             })}
           </div>
