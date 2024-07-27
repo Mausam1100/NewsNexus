@@ -31,7 +31,7 @@ export default class News extends Component {
   }
 
   async componentDidMount() {
-    document.title = `NewsNexus - Top ${this.capitalizeTitle(this.props.category)} Headlines`
+    document.title = `NewsNexus - ${this.capitalizeTitle(this.props.category)} Headlines`
     this.fetchArticles(1)
   }
 
