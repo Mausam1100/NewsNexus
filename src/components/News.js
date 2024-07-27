@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import NewsItems from './NewsItems'
 import Spinner from './Spinner';
 import PropTypes from 'prop-types'
-import imageNotFound from './imageNotFound.webp'
+import images from './images.png'
 
 export default class News extends Component {
   static defaultProps = {
@@ -64,7 +64,7 @@ export default class News extends Component {
           <div className='w-full flex gap-9 flex-wrap items-stretch py-10'>
             {this.state.article.map((element) => {
               return <div key={element.url} className='w-[calc(34.5%-36px)]'>
-                <NewsItems title={element.title} description={element.description} imgUrl={element.urlToImage? element.urlToImage: imageNotFound} newsUrl={element.url} author={element.author? element.author: "Unknown"} date={element.publishedAt}/>
+                <NewsItems title={element.title} description={element.description} imgUrl={element.urlToImage? element.urlToImage: images} newsUrl={element.url} author={element.author? element.author: "Unknown"} date={element.publishedAt}/>
               </div>
             })}
           </div>
