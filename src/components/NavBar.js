@@ -16,7 +16,7 @@ export class NavBar extends Component {
   }
   render() {
     return (
-      <div style={{backgroundColor: '#16212c'}} className='text-white py-4 sticky -top-1.5'>
+      <div style={{backgroundColor: '#16212c'}} className='text-white py-4 sticky top-0'>
         <div className='w-[90%] max-w-[1400px] mx-auto flex items-center justify-between'>
             <h2 className='text-2xl font-bold pr-4'>NewsNexus</h2>
             <ul className='flex items-center space-x-6'>
