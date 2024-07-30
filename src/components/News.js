@@ -22,17 +22,17 @@ export default function News(props) {
   const fetchApi = async() => {
     document.title = `NewsNexus - ${capitalizeTitle(props.category)} Headlines`;
     
-    props.setProgess(20)
+    props.setProgress(20)
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&pageSize=${props.pageSize}&page=${page}`;
     setLoading(true);
     const data = await fetch(url);
-    props.setProgess(30)
+    props.setProgress(30)
     const parsedData = await data.json();
-    props.setProgess(60)
+    props.setProgress(60)
     setArticles(parsedData.articles)
     setTotalResults(parsedData.totalResults)
     setLoading(false)
-    props.setProgess(100)
+    props.setProgress(100)
   }
 
   const fetchData = async () => {
